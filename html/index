@@ -10,20 +10,29 @@
 
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
-        <ul>
+    <!-- Grupo: logo + links do lado esquerdo -->
+    <div class="navbar-left">
+        <div class="logo">
+            <a href="index.html">
+                <img src="PawPrint.png" alt="Logo Animaliscare" class="logo-img">
+            </a>
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="sobre.html">Sobre nós</a></li>
         </ul>
-        <button class="btn-agendar">Marcar horário</button>
-    </nav>
+    </div>
+
+    <!-- Botão no canto direito -->
+    <button class="btn-agendar">Marcar horário</button>
+</nav>
+
+<img src="banner.jpg" alt="Cachorro fofo" class="hero-dog">
+
 </body>
-
-
 <section class="hero">
-    <img src="banner.jpg" alt="Cachorro fofo" class="hero-dog">
      <div class="hero-left">
       <p>Aqui nós priorizamos a saúde do seu melhor amigo</p>
       <button class="btn-consultar">Consultar exames</button>
