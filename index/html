@@ -8,6 +8,7 @@
 
 </head>
 
+
 <body>
     <!-- Navbar -->
     <nav class="navbar">
@@ -21,6 +22,19 @@
 </body>
 
 
+<section class="hero">
+    <img src="banner.jpg" alt="Cachorro fofo" class="hero-dog">
+     <div class="hero-left">
+      <p>Aqui nós priorizamos a saúde do seu melhor amigo</p>
+      <button class="btn-consultar">Consultar exames</button>
+    </div>
+      <div class="hero-right">
+      <blockquote>
+        <strong>“Resultados precisos e rapidez impressionante.”</strong><br>
+        <span>– Lucas Oliveira, cliente animaliscare por 6 meses</span>
+      </blockquote>
+    </div>
+</section>
 
 
 </html>
