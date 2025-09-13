@@ -3,30 +3,47 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between; 
   align-items: center;          
-  background-color:hsla(0, 100%, 96%, 1);
+  background-color: hsla(0, 100%, 96%, 1);
   height: 70px;                   
   margin: 0px 40px;              
   padding: 0 30px;               
   border-radius: 15px;            
 }
-.navbar ul {
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 38px; /* espaço entre logo e os links (so pra lembrar) */
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.nav-links {
   list-style: none;
   display: flex;
   gap: 30px;                   
   padding: 0;
+  margin: 0;
 }
-.navbar a {
+
+.nav-links a {
   text-decoration: none;
   font-size: 16px;                
   color: black;
 }
-.navbar a:hover {
-    color: #ff6b6b;
+
+.nav-links a:hover {
+  color: #ff6b6b;
 }
+
 .btn-agendar {
   background-color: #fdaec2;    
   border: none;
@@ -37,15 +54,18 @@ body {
   font-size: 14px;
   cursor: pointer;
 }
+
 .btn-agendar:hover {
-    background-color: #ff6b6b;
+  background-color: #ff6b6b;
 }
+
 .hero {
   position: relative;
   text-align: center;
   background: #EAE6E3;
   padding: 60px 20px;
 }
+
 .hero-dog {
   max-width: 1060px;
   margin: 0 auto;
@@ -55,9 +75,9 @@ body {
 
 .hero-left {
   position: absolute;
-  left: 15%;
-  bottom: 100px;
-  max-width: 250px;
+  left: 10%;
+  bottom: 250px;
+  max-width: 320px;
   text-align: left;
 }
 
@@ -81,12 +101,23 @@ body {
 .btn-consultar:hover {
     background-color:#29867f;
 }
+.hero-right span {
+  display: inline-block; 
+  position: relative;
+  color:#FF914D;  
+  font-weight: 500; 
+  font-size: 14px;
+  right: -50%;
+  bottom: 23px;
+  max-width: 300px;
+}
+
 .hero-right {
   position: absolute;
-  right: 10%;
-  bottom: 90.84px;
-  max-width: 300px;
+  right: 15%;
+  bottom: 130px;
+  max-width: 350px;
   text-align: left;
   font-family: "Poppins", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
 }
