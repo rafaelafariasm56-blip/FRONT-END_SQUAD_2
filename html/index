@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="sobre.html">Sobre nós</a></li>
+        </ul>
+        <button class="btn-agendar">Marcar horário</button>
+    </nav>
+</body>
+
+
+<section class="hero">
+    <img src="banner.jpg" alt="Cachorro fofo" class="hero-dog">
+     <div class="hero-left">
+      <p>Aqui nós priorizamos a saúde do seu melhor amigo</p>
+      <button class="btn-consultar">Consultar exames</button>
+    </div>
+      <div class="hero-right">
+      <blockquote>
+        <strong>“Resultados precisos e rapidez impressionante.”</strong><br>
+        <span>– Lucas Oliveira, cliente animaliscare por 6 meses</span>
+      </blockquote>
+    </div>
+</section>
+
+
+</html>
