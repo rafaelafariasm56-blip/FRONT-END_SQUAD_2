@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrosséis e Cards</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #1c1c1c;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    /* ---------------- CARROSSEIS ---------------- */
+    .carrossel-container {
+      width: 100%;
+      max-width: 1000px;
+      overflow: hidden;
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .carrossel {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .card {
+      flex: 0 0 250px;
+      height: 300px;
+      margin: 0 15px;
+      border-radius: 15px;
+      background: #ff8c42;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+      font-weight: bold;
+      transition: transform 0.5s, opacity 0.5s;
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+
+    /* Estado normal (laterais) */
+    .card {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+
+    /* Card ativo (centro) */
+    .card.ativo {
+      transform: scale(1.1);
+      opacity: 1;
+      z-index: 2;
+    }
+
+    .botoes {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      gap: 15px;
+    }
+
+    button {
+      background: #ff8c42;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #e06d2f;
+    }
+
+    /* ---------------- FLIP CARDS (Missão, Visão, Valores) ---------------- */
+    .flip-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 50px;
+      flex-wrap: wrap;
+    }
+
+    .flip-card {
+      background: transparent;
+      width: 280px;
+      height: 350px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .flip-card-front {
+      background: #ffcccb;
+    }
+
+    .flip-card-back {
+      background: #fff;
+      transform: rotateY(180deg);
+      font-size: 14px;
+      line-height: 1.5em;
+    }
+
+    .flip-card-front img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Carrossel Superior -->
+  <h1>Carrossel Superior</h1>
+  <div class="carrossel-container">
+    <div class="carrossel" id="carrossel1">
+      <div class="card ativo"><img src="https://i.ibb.co/xKnshsTH/Property-1-Slide-1.png"><p>Como tudo começou</p></div>
+      <div class="card"><img src="https://i.ibb.co/fK06B5c/Property-1-Slide-2.png"><p>A Nossa Jornada</p></div>
+      <div class="card"><img src="https://i.ibb.co/20NWT8WZ/Property-1-Slide-3.png"><p>Nossa Clínica</p></div>
+    </div>
+  </div>
+  <div class="botoes">
+    <button onclick="anterior(1)">⬅️</button>
+    <button onclick="proximo(1)">➡️</button>
+  </div>
+
+  <!-- Carrossel Inferior -->
+  <h1>Carrossel Inferior</h1>
+  <div class="carrossel-container">
+    <div class="carrossel" id="carrossel2">
+      <div class="card ativo"><img src="https://i.ibb.co/LXJDPQmC/ftos1.png"><p>Pedro Paulo</p></div>
+      <div class="card"><img src="https://i.ibb.co/4Z0RJxvQ/fotos2.png"><p>Maria Marluce</p></div>
+      <div class="card"><img src="https://i.ibb.co/cSH6nmmt/fotos3.png"><p>Cláudia Cristina</p></div>
+    </div>
+  </div>
+  <div class="botoes">
+    <button onclick="anterior(2)">⬅️</button>
+    <button onclick="proximo(2)">➡️</button>
+  </div>
+
+  <!-- Cards Missão, Visão, Valores -->
+  <h1>Missão, Visão e Valores</h1>
+  <div class="flip-container">
+    <!-- Missão -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" style="background:#ff9966">
+          <img src="https://i.ibb.co/RGZzs8bm/Miss-o.png" alt="Missão">
+          <h2>Missão</h2>
+        </div>
+        <div class="flip-card-back">
+          <p>
+           Oferecer um atendimento veterinário de excelência, cuidando de cada pet com o carinho e a atenção que ele merece, e tratando cada cliente com a máxima transparência e respeito em todos os processos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visão -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" style="background:#66ccff">
+          <img src="https://i.ibb.co/LX44PLhr/Vis-o.png" alt="Visão">
+          <h2>Visão</h2>
+        </div>
+        <div class="flip-card-back">
+          <p>
+            Ser a clínica veterinária de referência em nossa cidade, reconhecida pela excelência profissional, pela confiança dos nossos clientes e por promover a saúde e o bem-estar animal através da educação e do cuidado.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Valores -->
+    <div class="flip-card" onclick="this.classList.toggle('flipped')">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" style="background:#ffb6c1">
+          <img src="https://i.ibb.co/bMnjnDgh/Valores.png" alt="Valores">
+          <h2>Valores</h2>
+        </div>
+        <div class="flip-card-back">
+          <p>
+       Comprometimento: Dedicação total à saúde e ao bem-estar do seu pet.
+        Confiança: Relações construídas com base na transparência e honestidade.
+          Cuidado: Empatia e carinho em cada consulta e procedimento.
+          Excelência: Busca contínua pelas melhores e mais atuais práticas da medicina veterinária.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let index1 = 0, index2 = 0;
+
+    function atualizarCarrossel(carrosselId, index) {
+      const carrossel = document.getElementById("carrossel" + carrosselId);
+      const cards = carrossel.querySelectorAll(".card");
+      cards.forEach((c, i) => {
+        c.classList.remove("ativo");
+        if (i === index) c.classList.add("ativo");
+      });
+      return cards.length;
+    }
+
+    function proximo(carrosselId) {
+      if (carrosselId === 1) {
+        const total = atualizarCarrossel(1, (index1 + 1) % document.getElementById("carrossel1").children.length);
+        index1 = (index1 + 1) % total;
+      } else {
+        const total = atualizarCarrossel(2, (index2 + 1) % document.getElementById("carrossel2").children.length);
+        index2 = (index2 + 1) % total;
+      }
+    }
+
+    function anterior(carrosselId) {
+      if (carrosselId === 1) {
+        const total = document.getElementById("carrossel1").children.length;
+        index1 = (index1 - 1 + total) % total;
+        atualizarCarrossel(1, index1);
+      } else {
+        const total = document.getElementById("carrossel2").children.length;
+        index2 = (index2 - 1 + total) % total;
+        atualizarCarrossel(2, index2);
+      }
+    }
+
+    setInterval(() => proximo(1), 4000);
+    setInterval(() => proximo(2), 5000);
+  </script>
+</body>
+</html>
