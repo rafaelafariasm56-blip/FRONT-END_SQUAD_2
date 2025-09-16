@@ -1,7 +1,7 @@
 body {
-    background-color: #EAE6E3;
+    background-color: #ffffff;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
 }
 
 .navbar {
@@ -18,7 +18,7 @@ body {
 .navbar-left {
   display: flex;
   align-items: center;
-  gap: 38px; /* espaço entre logo e os links (so pra lembrar) */
+  gap: 38px; 
 }
 
 .logo-img {
@@ -50,7 +50,7 @@ body {
   padding: 8px 18px;
   border-radius: 20px;
   color: white;
-  font-family: "Poppins", sans-serif;
+  font-family: "DM sans", sans-serif;
   font-size: 14px;
   cursor: pointer;
 }
@@ -62,15 +62,17 @@ body {
 .hero {
   position: relative;
   text-align: center;
-  background: #EAE6E3;
+  background: #EAE6E3;  
   padding: 60px 20px;
+  width: 100%;         
+  box-sizing: border-box;
 }
 
 .hero-dog {
-  max-width: 1060px;
+  max-width: 1000px;
   margin: 0 auto;
   height: auto;
-  display: block
+  display: block;
 }
 
 .hero-left {
@@ -82,7 +84,7 @@ body {
 }
 
 .hero-left p {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", semi-bold;
   font-size: 18px;
   font-weight: 600;
 }
@@ -91,7 +93,7 @@ body {
     padding: 10px 20px;
     background-color:#6DB5D8;
     color: white;
-    font-family: "Poppins", sans-serif;
+    font-family: "DM Sans", sans-serif;
     border: none;
     border-radius: 20px;
     cursor: pointer;
@@ -118,6 +120,301 @@ body {
   bottom: 130px;
   max-width: 350px;
   text-align: left;
-  font-family: "Poppins", sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 15px;
+}
+
+.servicos {
+  background: white;
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 1160px;
+  margin: 50px auto;
+  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+}
+
+.servicos h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.servicos h2 span {
+  text-decoration: underline;
+  text-decoration-color:#FFBBC1;
+  color: #000000; 
+}
+
+.servicos .descricao {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  min-width: 260px;
+  padding: 25px;
+  border-radius: 15px;
+  color: white;
+  text-align: left;
+}
+
+.card h3 {
+  margin-bottom: 15px;
+}
+
+.card ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.card li {
+  margin-bottom: 8px;
+}
+
+.card button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  opacity: 0.8;
+}
+
+.card.azul {
+  background: #6DB5D8;
+}
+
+.card.laranja {
+  background: #FF914D;
+}
+
+.card.rosa {
+  background: #FDAEC2;
+}
+.coleta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;
+  max-width: 1160px;
+  padding: 0 20px;
+}
+
+.coleta-box {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  padding: 60px 40px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+
+  background: url("../coleta.png") center/cover no-repeat;
+}
+
+.coleta-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45); 
+  z-index: 0;
+}
+
+.coleta-box span,
+.coleta-box h2,
+.coleta-box p,
+.coleta-box button {
+  position: relative;
+  z-index: 1;
+}
+
+.coleta-box span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #BDE7E2; 
+}
+
+.coleta-box h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.coleta-box p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.coleta-box button {
+  padding: 12px 30px;
+  background-color: #6DB5D8;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.coleta-box button:hover {
+  background-color: #29867f;
+}
+.planos {
+  background: #CFEAF8; /* azul claro */
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 1160px;
+  margin: 50px auto;
+}
+.planos h2 span {
+  text-decoration: underline;
+  text-decoration-color:#6DB5D8;
+  text-decoration-thickness: 5px;
+  color: #000000; /* destaca "serviços" */
+}
+.planos h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.planos p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.cards-planos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.card {
+  flex: 1;
+  min-width: 260px;
+  max-width: 300px;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.card .preco {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.card ul li {
+  margin-bottom: 8px;
+}
+
+.card button {
+  background: #fff;
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  opacity: 0.8;
+}
+
+.card.silver {
+  background: #87c4e8;
+  color: #000;
+}
+
+.card.golden {
+  background: #111;
+  color: #fff;
+}
+.vantagens {
+  background: #cfeaf8; 
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  max-width: 700px;
+  margin: 60px auto;
+}
+
+.vantagens h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #000;
+}
+
+.vantagens-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 40px 60px;
+  text-align: left;
+}
+
+.vantagem-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.icon svg {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.vantagem-item h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: #000;
+}
+
+.vantagem-item p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+.dog-img {
+  position: absolute;
+  bottom: -155px; 
+  right: -22px;   /
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;     
 }
