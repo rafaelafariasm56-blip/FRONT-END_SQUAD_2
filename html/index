@@ -9,11 +9,10 @@
 </head>
 <body>
     <nav class="navbar">
-    <!-- Grupo: logo + links do lado esquerdo -->
     <div class="navbar-left">
         <div class="logo">
             <a href="index.html">
-                <img src="PawPrint.png" alt="Logo Animaliscare" class="logo-img">
+                <img src="img\PawPrint.png" alt="Logo Animaliscare" class="logo-img">
             </a>
         </div>
         <ul class="nav-links">
@@ -28,7 +27,7 @@
 </nav>
 </body>
 <section class="hero">
-    <img src="banner.jpg" alt="Cachorro fofo" class="hero-dog">
+    <img src="img\banner.jpg" alt="Cachorro fofo" class="hero-dog">
      <div class="hero-left">
       <p>Aqui nós priorizamos a saúde do seu melhor amigo</p>
       <button class="btn-consultar">Consultar exames</button>
@@ -197,7 +196,7 @@
       </div>
     </div>
     <div>
-        <img src="cachorro computador.png" alt="Cachorro com notebook" class="dog-img">
+        <img src="img/cachorro computador.png" alt="Cachorro com notebook" class="dog-img">
     </div>
     </div>
     
