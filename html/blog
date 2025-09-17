@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <meta charset="UTF-8">
@@ -46,19 +47,22 @@
             <section class="section container">
                 
 
-                <div class="featured-posts">
-                    <h2 class="subsection-title">Em Destaque</h2>
-                    <div class="swiper-container featured-swiper">
-                        <div class="swiper-wrapper" id="featured-posts-wrapper"></div>
-                        <div class="swiper-pagination"></div>
-                    </div>
+               <div class="featured-posts">
+                 <h2 class="subsection-title">Em Destaque</h2>
+                  <div class="swiper-container featured-swiper"> 
+                  <div class="swiper-wrapper" id="featured-posts-wrapper"></div>
+                 <div class="swiper-pagination"></div>
+               </div>
+          </div>
                 </div>
 
-                <div class="all-posts">
-                    <h2 class="subsection-title">Todas as Publicações</h2>
-                    <div id="blog-filters" class="blog-filters"></div>
-                    <div id="blog-grid" class="blog-grid"></div>
+               <div class="posts-container-wrapper">
+                  <div class="all-posts">
+                  <h2 class="subsection-title">Todas as Publicações</h2>
+                  <div id="blog-filters" class="blog-filters"></div>
+                  <div id="blog-grid" class="blog-grid"></div>
                 </div>
+        </div>
             </section>
         </div>
 
@@ -107,6 +111,24 @@
   <div class="footer-rights">
     <p>EJECT © Alguns Direitos Reservados</p>
   </div>
+     
+     <!-- Localização -->
+<div class="footer-location">
+  <h3>ONDE ESTAMOS</h3>
+  <div class="map-container">
+ <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.114694582269!2d-35.1997806!3d-5.843449000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff9268f0e61d%3A0x85af869d288f334e!2sEJECT%20-%20Empresa%20J%C3%BAnior%20da%20Escola%20de%20Ci%C3%AAncias%20e%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1726600000000!5m2!1spt-BR!2sbr" 
+  width="100%" 
+  height="200" 
+  style="border:0;" 
+  allowfullscreen 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+  </div>
+</div>
+
 </footer>
 
 
