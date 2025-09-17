@@ -421,3 +421,297 @@ body {
 </section>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============== VARIÁVEIS DE COR E FONTES (A NOSSA IDENTIDADE VISUAL) ============== */
+
+:root {
+    --bg-main: #F4F0EC;
+    --text-main: #4F4F4F;
+    --brand-pink: #F4D3D4;
+    --brand-pink-darker: #9A5C5E;
+    --brand-orange: #E58A63;
+    --brand-blue: #60B6D3;
+    --bg-white: #FFFFFF;
+    --font-brand: 'Fredoka', sans-serif;
+    --font-text: 'Poppins', sans-serif;
+}
+
+/* ============== ESTILOS GLOBAIS ============== */
+/* // Define a base para toda a página (fonte, cor de fundo, etc.). */
+
+/* ============== ESTILOS GLOBAIS ============== */
+body {
+    font-family: var(--font-text);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    line-height: 1.6;
+
+    /* CÓDIGO CORRIGIDO - Usando o link direto para a imagem .png */
+    background-image: url('https://i.ibb.co/d4Z98BPZ/logo.png');
+
+    /* Propriedades para garantir que a imagem não se repita e se ajuste bem */
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: contain;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ============== CABEÇALHO E NAVEGAÇÃO ============== */
+/* // Estilos para a barra de navegação fixa no topo. */
+/* Navbar */
+.navbar-container {
+  background-color: #ffe6e6; /* rosa claro */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-radius: 15px;
+max-width: 1000px; 
+   left: 30.5rem;
+   
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo | Menu | Botão */
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Logo */
+.logo-img {
+  width: 40px;
+  height: auto;
+}
+
+/* Menu */
+.nav-menu-desktop {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-weight: 500;
+  text-decoration: none;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link.active {
+  color: #ff6b81; /* rosa mais forte */
+}
+
+/* Botão */
+.btn {
+  border-radius: 9999px;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-pink {
+  background-color: #ffb6c1;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.btn-desktop {
+  display: inline-block;
+}
+
+
+/* ============== PÁGINAS E NAVEGAÇÃO SPA ============== */
+/* // Controla a visibilidade e a transição suave entre as "páginas" virtuais. */
+.page { display: none; animation: fadeIn 0.5s; }
+.page.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ============== COMPONENTES GENÉRICOS DE SECÇÃO ============== */
+.section { padding: 5rem 0; }
+.section-header { text-align: center; margin-bottom: 3rem; }
+.section-title { font-family: var(--font-brand); font-size: 2.5rem; font-weight: 700; color: var(--brand-orange); }
+.section-subtitle { font-size: 1.125rem; color: #4b5563; margin-top: 0.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.subsection-title { font-family: var(--font-brand); font-size: 1.875rem; font-weight: 600; color: #374151; text-align: center; margin-bottom: 1.5rem; margin-top: 3rem; }
+
+/* ============== BLOG: PÁGINA PRINCIPAL ============== */
+/* // Estilos para os filtros, a grelha e os cards de post. */
+.blog-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-bottom: 3rem; }
+.filter-btn { background-color: var(--bg-white); border: 1px solid #ddd; color: var(--text-main); cursor: pointer; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; font-weight: 500; transition: all 0.3s; }
+.filter-btn.active, .filter-btn:hover { background-color: var(--brand-orange); color: white; border-color: var(--brand-orange); }
+.blog-grid { display: grid; gap: 2rem; }
+.blog-card { cursor: pointer; background: var(--bg-white); border-radius: 1.5rem; overflow: hidden; box-shadow: 0 8px 16px rgba(0,0,0,0.05); transition: all 0.3s; }
+.blog-card:hover { transform: translateY(-10px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+.blog-card-image { width: 100%; height: 200px; object-fit: cover; }
+.blog-card-content { padding: 1.5rem; }
+.blog-card-category { font-size: 0.75rem; font-weight: 600; color: var(--brand-orange); margin-bottom: 0.5rem; text-transform: uppercase; }
+.blog-card-title { font-family: var(--font-brand); font-size: 1.25rem; font-weight: 600; color: #374151; margin-bottom: 0.5rem; }
+.blog-card-author { font-size: 0.875rem; color: #6b7280; }
+
+/* // Estilo para o contentor branco da secção de publicações */
+.posts-container-wrapper {
+    background-color: var(--bg-white); /* Define o fundo como branco */
+    padding: 2rem 1.5rem;             /* Adiciona espaçamento interno */
+    border-radius: 1.5rem;            /* Arredonda as bordas */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05); /* Adiciona uma sombra suave */
+    margin-top: 3rem;                 /* Cria um espaço entre ele e a secção de destaques */
+}
+
+/* ============== BLOG: CARROSSEL DE DESTAQUES ============== */
+/* // Estilos específicos para o carrossel da Swiper.js. */
+.featured-swiper { padding-bottom: 2.5rem !important; }
+.swiper-pagination-bullet-active { background: var(--brand-orange); }
+.featured-slide-content { position: relative; width: 100%; height: 300px; border-radius: 1.5rem; overflow: hidden; cursor: pointer; }
+.featured-slide-img { width: 100%; height: 100%; object-fit: cover; }
+.featured-slide-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); }
+.featured-slide-text { position: absolute; bottom: 0; left: 0; padding: 1.5rem; color: white; text-align: left; }
+.featured-slide-title { font-family: var(--font-brand); font-size: 1.5rem; font-weight: 600; }
+
+/* ============== BLOG: PÁGINA DE DETALHE ============== */
+/* // Estilos para a página que mostra um post completo. */
+.post-detail-section { background-color: var(--bg-white); padding: 5rem 0; }
+.post-detail-grid { display: grid; gap: 3rem; }
+.post-header-image { width: 100%; max-height: 500px; object-fit: cover; border-radius: 1.5rem; margin-bottom: 2rem; }
+.post-title { font-family: var(--font-brand); font-size: 2.5rem; font-weight: 700; color: var(--brand-orange); line-height: 1.2; }
+.post-author { margin-top: 1rem; color: #6b7280; }
+.post-content { margin-top: 2rem; line-height: 1.75; }
+.post-sidebar { position: sticky; top: 120px; }
+.related-posts-container { display: flex; flex-direction: column; gap: 1rem; }
+.related-post-card { display: flex; align-items: center; gap: 1rem; text-decoration: none; color: inherit; }
+.related-post-card:hover .related-post-title { color: var(--brand-orange); }
+.related-post-image { width: 80px; height: 80px; object-fit: cover; border-radius: 0.75rem; flex-shrink: 0; }
+.related-post-title { font-weight: 600; }
+.related-post-author { font-size: 0.8rem; color: #9ca3af; }
+.back-to-blog-btn { margin-top: 2rem; font-weight: 600; color: var(--brand-orange); cursor: pointer; background: none; border: none; padding: 0; }
+
+/* ============== MODAIS (Pop-ups) ============== */
+.modal { position: fixed; inset: 0; background-color: rgba(0,0,0,0.7); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; z-index: 100; }
+.modal.active { opacity: 1; pointer-events: auto; }
+.modal-content { background: var(--bg-white); padding: 2rem; border-radius: 1.5rem; width: 90%; max-width: 400px; position: relative; }
+.modal-close-btn { position: absolute; top: 1rem; right: 1rem; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #9ca3af; }
+.modal-title { font-family: var(--font-brand); font-size: 1.25rem; text-align: center; margin-bottom: 1rem; }
+.modal-preview-image { width: 100%; height: 150px; object-fit: cover; border-radius: 1rem; margin-bottom: 1rem; }
+.modal-preview-text { font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+/* ============== RODAPÉ ============== */
+.footer {
+  background-color: #ffe6e6; /* fundo rosa claro */
+  color: #000;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; /* centraliza os blocos */
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 5rem; /* controla o espaço entre as colunas */
+  max-width: 1200px; /* limite para não ficar muito largo */
+  margin: 0 auto; /* centraliza dentro da tela */
+}
+
+.footer-logo img {
+  width: 55px;   /* logo maior */
+  height: auto;  /* mantém proporção */
+  margin-bottom: 1rem;
+}
+
+.footer-contact, 
+.footer-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-contact h3, 
+.footer-info h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.footer-contact p {
+  margin: 1rem 0;
+}
+
+.footer-contact hr {
+  border: none;
+  border-top: 1px solid #f5b5b5;
+  margin: 1rem 0;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-socials a {
+  font-size: 1.8rem;
+  color: black;
+  text-decoration: none;
+}
+
+.footer-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-info li {
+  margin: 0.5rem 0;
+}
+
+.footer-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-rights {
+  margin-top: 2rem;
+  text-align: center; /* centraliza o texto de direitos */
+  font-size: 0.9rem;
+}
+
+
+
+/* ============== RESPONSIVIDADE ============== */
+@media (min-width: 768px) {
+    .nav-menu-desktop { display: flex; align-items: center; gap: 2rem; }
+    .btn-desktop { display: inline-block; }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .post-detail-grid { grid-template-columns: 2fr 1fr; }
+}
+@media (min-width: 1024px) {
+    .blog-grid { grid-template-columns: repeat(3, 1fr); }
+}
