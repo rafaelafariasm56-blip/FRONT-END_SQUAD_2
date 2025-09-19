@@ -2,6 +2,7 @@ body {
     background-color: #ffffff;
     margin: 0;
     font-family: 'DM Sans', sans-serif;
+    
 }
 
 .navbar {
@@ -62,10 +63,21 @@ body {
 .hero {
   position: relative;
   text-align: center;
-  background: #EAE6E3;  
+  background-color: #EAE6E3;
   padding: 60px 20px;
-  width: 100%;          
+  width: 100%;
   box-sizing: border-box;
+  min-height: 300px;
+
+}
+
+.patinha{
+  position: absolute;
+  max-width: 1300px;
+  max-height: 701.9081420898438px;
+  margin: 0 auto;
+  height: auto;
+  display: block;
 }
 
 .hero-dog {
@@ -78,28 +90,31 @@ body {
 .hero-left {
   position: absolute;
   left: 10%;
-  bottom: 250px;
+  bottom: 151px;
   max-width: 320px;
   text-align: left;
 }
 
 .hero-left p {
-  font-family: "Inter", semi-bold;
-  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-size: 28px;
   font-weight: 600;
+  margin-bottom: 20px; 
+  max-width: 356px;
 }
 
 .btn-consultar {
-    padding: 10px 20px;
-    background-color:#6DB5D8;
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+  padding: 10px 20px;              
+  background-color: #6DB5D8;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 0;  
+  display: inline-block;
 }
-
 .btn-consultar:hover {
     background-color:#29867f;
 }
@@ -109,19 +124,21 @@ body {
   color:#FF914D;  
   font-weight: 500; 
   font-size: 14px;
-  right: -50%;
-  bottom: 23px;
-  max-width: 300px;
+  left:160px;
+  bottom: 21px;
+  max-width: 204px;
+  font-size:16px;
 }
 
 .hero-right {
   position: absolute;
-  right: 15%;
-  bottom: 130px;
-  max-width: 350px;
+  left: 800px;
+  bottom: 80px;
+  max-width: 380px;
   text-align: left;
   font-family: "DM Sans", sans-serif;
-  font-size: 15px;
+  font-size: 20px;
+
 }
 
 .servicos {
@@ -225,14 +242,6 @@ body {
   overflow: hidden;
 
   background: url("../img/coleta.png") center/cover no-repeat;
-}
-
-.coleta-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45); 
-  z-index: 0;
 }
 
 .coleta-box span,
@@ -344,30 +353,46 @@ body {
   margin-bottom: 8px;
 }
 
-.card button {
-  background: #fff;
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.card button:hover {
-  opacity: 0.8;
-}
-
 .card.silver {
   background: #6DB5D8;
   color: #000;
+  min-height: 200px;
 }
 
 .card.golden {
   background: #000000;
   color: #6DB5D8;
 }
+.card button.butaosilver {
+  background-color: #000000; 
+  color: #fff; 
+  border-radius: 20px;
+  border: none; 
+  padding: 10px 20px; 
+  cursor: pointer; 
+  font-weight: bold;
+  transition: 0.3s;
+
+}
+.card button.butaosilver:hover {
+  background-color: #333; 
+  color: #fff;
+}
+.card button.butaogolden{
+  background-color:#6DB5D8; 
+  color: #fff; 
+  border-radius: 25px;
+  padding: 10px 20px; 
+  cursor: pointer; 
+  font-weight: bold;
+  transition: 0.3s;
+
+}
+.card button.butaosgolden:hover {
+  background-color: #66a8c9cc; 
+  color: #fff;
+}
+
 .vantagens {
   background: #cfeaf8; 
   border-radius: 20px;
@@ -472,6 +497,8 @@ body {
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
+  font-family: inter;
+
 }
 
 .form-row {
@@ -487,15 +514,18 @@ body {
   min-height: 100px;
   resize: vertical;
 }
-
 .contato-form button {
-  padding: 14px;
-  background: #4DB6AC;
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #78B0B2;
   border: none;
   border-radius: 6px;
   color: white;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: semi-bold;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -529,6 +559,8 @@ body {
   }
 }
 .apresentacao {
+  border-top: 2px solid #ddd; 
+  padding-top: 40px;         
   max-width: 1000px;
   margin: 100px auto;
   padding: 40px 20px;
@@ -664,30 +696,6 @@ body {
   text-align: center; /* centraliza o texto de direitos */ 
   font-size: 0.9rem; 
 } 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* ============== VARIÁVEIS DE COR E FONTES (A NOSSA IDENTIDADE VISUAL) ============== */
