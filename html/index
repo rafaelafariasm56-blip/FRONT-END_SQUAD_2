@@ -21,12 +21,13 @@
             <li><a href="sobre.html">Sobre nós</a></li>
         </ul>
     </div>
-
-    <!-- Botão no canto direito -->
+    
+    
     <button class="btn-agendar">Marcar horário</button>
 </nav>
 </body>
 <section class="hero">
+    <img src="img\patinhas.png" alt="patinhas" class="patinha">    
     <img src="img\banner.jpg" alt="Cachorro fofo" class="hero-dog">
      <div class="hero-left">
       <p>Aqui nós priorizamos a saúde do seu melhor amigo</p>
@@ -34,7 +35,7 @@
     </div>
       <div class="hero-right">
       <blockquote>
-        <strong>“Resultados precisos e rapidez impressionante.”<span>– Lucas Oliveira, cliente animaliscare por 6 meses</span></strong><br>
+        <strong>“Resultados precisos e rapidez impressionante.”<span>–Lucas Oliveira, cliente animaliscare por 6 meses</span></strong><br>
       </blockquote>
     </div>
 </section>
@@ -92,23 +93,23 @@
     <button>Entrar em contato</button>
   </div>
 </section>
-<section class="planos">
-  <h2><span>PLANO PET</span> de Saúde</h2>
-  <p><strong>Atendimento 24H</strong> em todas as nossas 56 filiais espalhadas pelo Brasil.<br>
-  Exames laboratoriais inclusos e Home-care*</p>
+  <section class="planos">
+    <h2><span>PLANO PET</span> de Saúde</h2>
+    <p><strong>Atendimento 24H</strong> em todas as nossas 56 filiais espalhadas pelo Brasil.<br>
+    Exames laboratoriais inclusos e Home-care*</p>
 
-  <div class="cards-planos">
-    <div class="card silver">
-      <h3>SILVER</h3>
-      <p class="preco">R$ 199,90/mês</p>
-      <ul>
-        <li>Atendimento <strong>24H</strong></li>
-        <li>Exames laboratoriais inclusos</li>
-        <li>Descontos exclusivos no nosso APP</li>
-        <li>Acompanhamento semanal via WhatsApp</li>
-      </ul>
-      <button>Contratar</button>
-    </div>
+    <div class="cards-planos">
+      <div class="card silver">
+        <h3>SILVER</h3>
+        <p class="preco">R$ 199,90/mês</p>
+        <ul>
+          <li>Atendimento <strong>24H</strong></li>
+          <li>Exames laboratoriais inclusos</li>
+          <li>Descontos exclusivos no nosso APP</li>
+          <li>Acompanhamento semanal via WhatsApp</li>
+        </ul>
+        <button class="butaosilver">Contratar</button>
+      </div>
 
     <div class="card golden">
       <h3>GOLDEN</h3>
@@ -122,10 +123,9 @@
         <li>Sem carência</li>
         <li>Home-care especializado*</li>
       </ul>
-      <button>Contratar</button>
+      <button class="butaogolden">Contratar</button>
     </div>
   </div>
-
 <section class="vantagens">
   <div class="vantagens-content">
     <h2>Nossas Vantagens</h2>
@@ -243,9 +243,11 @@
     </div>
   </div>
 
+
 </section>
 <!-- Seção de Apresentação -->
 <section class="apresentacao">
+
   <div class="apresentacao-container">
     
     <div class="apresentacao-texto">
@@ -311,7 +313,6 @@
  
 
 </html>
-
 
 
 
