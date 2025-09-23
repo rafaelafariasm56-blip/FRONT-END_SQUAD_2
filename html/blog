@@ -1,241 +1,326 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blog - Animalis Care</title>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - Animalis Care</title>
-
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    
-    <link rel="preconnect" 
-          href="https://i.ibb.co/4Rnc5rRx/logo.png">
-    <link rel="preconnect" 
-          href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" 
-          rel="stylesheet">
-
-    <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Pequenas melhorias visuais locais para facilitar testes */
+    .page { display:none; }
+    .page.active { display:block; }
+    .modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.5); z-index:9999; padding:20px; }
+    .modal.active { display:flex; }
+    .modal-content { background:#fff; border-radius:8px; max-width:900px; width:100%; max-height:90vh; overflow:auto; position:relative; padding:18px; }
+    .modal-close-btn { position:absolute; right:10px; top:6px; background:transparent; border:0; font-size:28px; cursor:pointer; }
+    .blog-card { cursor:pointer; }
+    .related-post-card { cursor:pointer; }
+  </style>
 </head>
 <body>
+  <header class="navbar-container">
+    <div class="container">
+      <nav class="navbar">
+        <img src="https://i.ibb.co/MdgW9dM/logo.png" alt="Logo Animalis Care" class="logo-img" loading="lazy">
+        <div class="nav-menu-desktop">
+          <a href="../index.html" class="nav-link">Home</a>
+          <a href="index.html" class="nav-link active">Blog</a>
+          <a href="../sobre-nos/index.html" class="nav-link">Sobre nós</a>
+        </div>
+        <a href="#" class="btn btn-pink btn-desktop">Marcar horários</a>
+      </nav>
+    </div>
+  </header>
 
-   <header class="navbar-container">
-  <div class="container">
-    <nav class="navbar">
-      <!-- Logo -->
-      
-        <img src="https://i.ibb.co/MdgW9dM/logo.png" alt="Logo Animalis Care" class="logo-img">
-    
-      <!-- Menu -->
-      <div class="nav-menu-desktop">
-        <a href="../index.html" class="nav-link">Home</a>
-        <a href="index.html" class="nav-link active">Blog</a>
-        <a href="../sobre-nos/index.html" class="nav-link">Sobre nós</a>
-      </div>
-
-      <!-- Botão -->
-      <a href="#" class="btn btn-pink btn-desktop">Marcar horários</a>
-    </nav>
-  </div>
-</header>
-
-
-    <main id="app-content">
-        <div id="page-blog-list" class="page active">
-            <section class="section container">
-                
-
-               <div class="featured-posts">
-                 <h2 class="subsection-title">Em Destaque</h2>
-                  <div class="swiper-container featured-swiper"> 
-                  <div class="swiper-wrapper" id="featured-posts-wrapper"></div>
-                 <div class="swiper-pagination"></div>
-               </div>
+  <main id="app-content">
+    <div id="page-blog-list" class="page active">
+      <section class="section container">
+        <div class="featured-posts">
+          <h2 class="subsection-title">Em Destaque</h2>
+          <div class="swiper-container featured-swiper">
+            <div class="swiper-wrapper" id="featured-posts-wrapper"></div>
+            <div class="swiper-pagination"></div>
           </div>
-                </div>
-
-               <div class="posts-container-wrapper">
-                  <div class="all-posts">
-                  <h2 class="subsection-title">Todas as Publicações</h2>
-                  <div id="blog-filters" class="blog-filters"></div>
-                  <div id="blog-grid" class="blog-grid"></div>
-                </div>
-        </div>
-            </section>
         </div>
 
-        <div id="page-post-detail" class="page">
-            </div>
-    </main>
-                    <!-- RODAPÉ -->
-   <footer class="footer">
-  <div class="footer-container">
-    
-    <!-- Logo -->
-    <div class="footer-logo">
-      <img src="https://i.ibb.co/8gbq4pTs/logo.png" alt="">
-
-
+        <div class="posts-container-wrapper">
+          <div class="all-posts">
+            <h2 class="subsection-title">Todas as Publicações</h2>
+            <div id="blog-filters" class="blog-filters"></div>
+            <div id="blog-grid" class="blog-grid"></div>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- Contato -->
-    <div class="footer-contact">
-      <h3>CONTATO</h3>
-      <p>+55 21 99999-9999</p>
-      <p>contato@animalisecare.com</p>
-      <hr>
-      <p>Rua ali perto, 42 - Candelária<br>Rio Grande do Norte - RN</p>
-      <hr>
-      <div class="footer-socials">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+    <div id="page-post-detail" class="page" aria-live="polite"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo"><img src="https://i.ibb.co/8gbq4pTs/logo.png" alt="Logo Animalis Care" loading="lazy"></div>
+      <div class="footer-contact">
+        <h3>CONTATO</h3>
+        <p>+55 21 99999-9999</p>
+        <p>contato@animalisecare.com</p>
+        <hr>
+        <p>Rua ali perto, 42 - Candelária<br>Rio Grande do Norte - RN</p>
+        <hr>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-info">
+        <h3>INFORMAÇÕES</h3>
+        <ul>
+          <li><a href="#">Exames Laboratoriais</a></li>
+          <li><a href="#">Consultas Veterinarias</a></li>
+          <li><a href="#">Plano PET de saúde</a></li>
+          <li><a href="#">Quem somos?</a></li>
+        </ul>
       </div>
     </div>
 
-    <!-- Informações -->
-    <div class="footer-info">
-      <h3>INFORMAÇÕES</h3>
-      <ul>
-        <li><a href="#">Exames Laboratoriais</a></li>
-        <li><a href="#">Consultas Veterinarias</a></li>
-        <li><a href="#">Plano PET de saúde</a></li>
-        <li><a href="#">Quem somos?</a></li>
-      </ul>
+    <div class="footer-rights">
+      <p>EJECT © Alguns Direitos Reservados</p>
+    </div>
+
+    <div class="footer-location">
+      <h3>ONDE ESTAMOS</h3>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.114694582269!2d-35.1997806!3d-5.843449000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff9268f0e61d%3A0x85af869d288f334e!2sEJECT%20-%20Empresa%20J%C3%BAnior%20da%20Escola%20de%20Ci%C3%AAncias%20e%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1726600000000!5m2!1spt-BR!2sbr" width="100%" height="200" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal de preview -->
+  <div id="preview-modal" class="modal" role="dialog" aria-hidden="true" aria-modal="true">
+    <div class="modal-content" role="document">
+      <button class="modal-close-btn" aria-label="Fechar" onclick="App.closeModal('preview-modal')">&times;</button>
+      <div id="preview-modal-content"></div>
     </div>
   </div>
 
-  <!-- Direitos -->
-  <div class="footer-rights">
-    <p>EJECT © Alguns Direitos Reservados</p>
-  </div>
-     
-     <!-- Localização -->
-<div class="footer-location">
-  <h3>ONDE ESTAMOS</h3>
-  <div class="map-container">
- <iframe 
-  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.114694582269!2d-35.1997806!3d-5.843449000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7b2ff9268f0e61d%3A0x85af869d288f334e!2sEJECT%20-%20Empresa%20J%C3%BAnior%20da%20Escola%20de%20Ci%C3%AAncias%20e%20Tecnologia!5e0!3m2!1spt-BR!2sbr!4v1726600000000!5m2!1spt-BR!2sbr" 
-  width="100%" 
-  height="200" 
-  style="border:0;" 
-  allowfullscreen 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+  <!-- Swiper -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-  </div>
-</div>
+  <script>
+    const App = {
+      // banco local (mantive os posts que você já tinha)
+      database: {
+        blogPosts: [
+          { id: 1, title: '5 Sinais de que o seu Cão pode estar com Dor', author: 'Dra. Ana Sousa', image: 'https://www.petz.com.br/blog/wp-content/uploads/2018/11/como-saber-se-o-cao-esta-com-dor.jpg', category: 'Cães', featured: true, content: '<p>A dor em cães pode ser subtil. Fique atento a mudanças de comportamento como falta de apetite, relutância em se mover ou agressividade incomum. Identificar cedo é crucial para o bem-estar do seu amigo.</p><p>Se notar algum destes sinais, não hesite em procurar um veterinário. Um diagnóstico preciso pode fazer toda a diferença no tratamento e na qualidade de vida do seu pet.</p>' },
+          { id: 2, title: 'A importância da Vacinação para Gatos', author: 'Dr. Carlos Andrade', image: 'https://www.petz.com.br/blog/wp-content/uploads/2016/10/vacinacao-para-gatos-1280x720.jpg', category: 'Gatos', featured: true, content: '<p>Manter a vacinação do seu gato em dia é um ato de amor e responsabilidade. As vacinas protegem contra doenças graves e contagiosas. Converse com seu veterinário para criar um calendário de vacinação adequado para o estilo de vida do seu felino.</p>' },
+          { id: 3, title: 'Alimentação Natural: Prós e Contras', author: 'Dra. Ana Sousa', image: 'https://jpimg.com.br/uploads/2025/03/veja-os-beneficios-da-racao-e-da-alimentacao-natural-para-pets.jpg', category: 'Alimentação', content: '<p>A alimentação natural tem ganhado popularidade, mas é preciso cuidado. Os prós incluem ingredientes frescos e sem conservantes. Os contras envolvem o risco de desbalanceamento nutricional. Consulte sempre um veterinário nutricionista antes de mudar a dieta do seu pet.</p>' },
+          { id: 4, title: 'Arranhadores: Por que todo Gato Precisa de Um', author: 'Dr. Carlos Andrade', image: 'https://blog-static.petlove.com.br/wp-content/uploads/2021/02/Gato-arranhador-Petlove.jpg', category: 'Gatos', featured: true, content: '<p>Arranhar é um comportamento natural dos gatos. Ajuda a afiar as unhas e a marcar território. Oferecer um arranhador adequado evita que seus móveis se tornem o alvo principal. Existem diversos modelos, descubra qual o seu gato prefere!</p>' },
+          { id: 5, title: 'Alimentação Natural: Benefícios para Cães', author: 'Dra. Mariana Silva', image: 'https://media.gazetadopovo.com.br/2024/05/02134321/Shutterstock_2310822195-960x540.jpg', category: 'Cães', featured: true, content: '<p>A alimentação natural pode trazer mais saúde e disposição para os cães, evitando conservantes e ingredientes artificiais. É importante contar com a orientação de um veterinário para montar a dieta adequada.</p>' },
+          { id: 6, title: 'Como Evitar Bolas de Pelo em Gatos', author: 'Dr. Carlos Andrade', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSILNNgitLym95ob69K3yyII3n-nhIyB9efMg&s', category: 'Gatos', featured: false, content: '<p>Escovar o gato regularmente ajuda a reduzir a formação de bolas de pelo. Além disso, rações específicas e o uso de petiscos com fibras auxiliam no trato intestinal.</p>' },
+          { id: 7, title: 'Cachorros Podem Comer Frutas?', author: 'Dra. Fernanda Costa', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsisvT2rwbITooSQBioEgt2LyN8SUsNDDFSA&s', category: 'Cães', featured: false, content: '<p>Algumas frutas como maçã, banana e melancia são liberadas para cães. Já uvas e abacate devem ser evitados. Sempre ofereça sem sementes e em pequenas quantidades.</p>' },
+          { id: 8, title: 'Arranhadores: Por que todo Gato Precisa de Um', author: 'Dr. Carlos Andrade', image: 'https://blog-static.petlove.com.br/wp-content/uploads/2021/02/Gato-arranhador-Petlove.jpg', category: 'Gatos', featured: true, content: '<p>Arranhar é um comportamento natural dos gatos. Ajuda a afiar as unhas e a marcar território. Oferecer um arranhador adequado evita que seus móveis se tornem o alvo principal. Existem diversos modelos, descubra qual o seu gato prefere!</p>' },
+          { id: 9, title: 'Como Ensinar o Cachorro a Fazer as Necessidades no Lugar Certo', author: 'Dra. Camila Nunes', image: 'https://blog-static.petlove.com.br/wp-content/uploads/2012/10/Cachorro-no-tapete-higienico.jpg', category: 'Cães', featured: false, content: '<p>O adestramento positivo, paciência e o uso de tapetes higiênicos são fundamentais para ensinar o pet. Recompensas como petiscos aceleram o aprendizado.</p>' },
+          
+          
+          { id: 10, title: 'Brinquedos Interativos para Entreter seu Gato', author: 'Dr. Paulo Meireles', image: 'https://blog-static.petlove.com.br/wp-content/uploads/2021/10/brinquedos-barato-gatos-Petlove.jpg', category: 'Gatos', featured: false, content: '<p>Brinquedos que estimulam a caça e o movimento são essenciais para o bem-estar felino. Bolinhas, varinhas com penas e brinquedos com catnip fazem sucesso.</p>' },
+          
+          { id: 11, title: 'Vacinação de Cães: Quais São as Principais?', author: 'Dra. Aline Santos', image: 'https://optimumpet.com.br/media/uploads/2022/12/vacinas-para-caes-scaled.webp', category: 'Cães', featured: true, content: '<p>Vacinas como V8, V10, antirrábica e a de gripe canina são essenciais para a saúde e proteção dos cães. Manter a carteirinha em dia é fundamental.</p>' },
+          { id: 12, title: 'Areia de Gato: Qual a Melhor Opção?', author: 'Dra. Juliana Prado', image: 'https://opinioescertificadas.com.br/wp-content/uploads/2021/02/melhor-areia-para-gatos.jpg', category: 'Gatos', featured: false, content: '<p>Existem areias de sílica, granulado de madeira e argila. Cada uma tem vantagens, como maior absorção ou neutralização de odores. A escolha depende do perfil do tutor e do gato.</p>' },
+          
+          { id: 13, title: 'Como Cuidar de Pássaros em Casa', author: 'Dr. Ricardo Lima', image: 'https://www.petz.com.br/blog/wp-content/uploads/2017/06/aves-domesticas.jpg', category: 'Pássaros', featured: false, content: '<p>Pássaros precisam de gaiolas espaçosas, alimentação variada e estímulos como poleiros e brinquedos. Atenção à higiene é indispensável para evitar doenças.</p>' },
+          { id: 14, title: 'Banho em Cães: Com Que Frequência Dar?', author: 'Dra. Mariana Silva', image: 'https://www.petz.com.br/blog/wp-content/uploads/2020/05/cao-pode-tomar-banho-todo-dia-1280x720.jpg', category: 'Cães', featured: false, content: '<p>A frequência do banho varia conforme a raça e o tipo de pelo. Em média, de 15 em 15 dias é o recomendado. Uso de shampoos específicos é essencial.</p>' },
+          { id: 15, title: 'Gatos Podem Tomar Banho?', author: 'Dr. Carlos Andrade', image: 'https://www.petz.com.br/blog/wp-content/uploads/2019/05/gato-toma-banho-1.jpg', category: 'Gatos', featured: false, content: '<p>Em geral, gatos não precisam de banho, pois se higienizam lambendo-se. Porém, em casos específicos de sujeira ou problemas de saúde, o banho pode ser necessário.</p>' },
+          { id: 16, title: 'Adestramento Positivo: Como Funciona?', author: 'Dra. Fernanda Costa', image: 'https://www.petz.com.br/blog/wp-content/uploads/2020/05/reforco-positivo.jpg', category: 'Cães', featured: true, content: '<p>O adestramento positivo é baseado em recompensas ao invés de punições. Ensina o cão de forma eficaz e fortalece o vínculo com o tutor.</p>' },
+          { id: 17, title: 'O que Significa o Ronronar dos Gatos?', author: 'Dra. Camila Nunes', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCrovA-cgNo1Ytx0ETDjoItQ4pkSZZ6G0BKQ&s', category: 'Gatos', featured: false, content: '<p>O ronronar é um sinal de bem-estar, mas também pode indicar ansiedade ou dor. Observar o contexto do comportamento é essencial para entender seu gato.</p>' },
+          { id: 18, title: 'Exercícios para Cães em Apartamento', author: 'Dr. Paulo Meireles', image: 'https://blog-static.petlove.com.br/wp-content/uploads/2020/09/Cachorro-exercicio-Petlove.jpg', category: 'Cães', featured: false, content: '<p>Mesmo em apartamentos, cães precisam se exercitar. Brincadeiras com bolinha, passeios diários e circuitos dentro de casa ajudam na saúde física e mental.</p>' }
+        ]
+      },
 
-</footer>
+      swiperInstance: null,
 
+      // Inicialização
+      init() {
+        this.renderBlogPage();
+        // Fechar modal ao apertar Esc
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') this.closeModal('preview-modal');
+        });
+        // Fechar modal clicando fora (área escura)
+        document.getElementById('preview-modal').addEventListener('click', (e) => {
+          if (e.target && e.target.id === 'preview-modal') this.closeModal('preview-modal');
+        });
+      },
 
-    <div id="preview-modal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close-btn" onclick="App.closeModal('preview-modal')">&times;</button>
-            <div id="preview-modal-content"></div>
+      // Navegação entre páginas
+      navigateTo(pageId) {
+        document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+        const el = document.getElementById(pageId);
+        if (el) el.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      // Renderiza lista do blog
+      renderBlogPage(category = 'Todos') {
+        const categories = ['Todos', ...new Set(this.database.blogPosts.map(p => p.category))];
+        const featuredPosts = this.database.blogPosts.filter(p => p.featured);
+        const filteredPosts = category === 'Todos'
+          ? this.database.blogPosts
+          : this.database.blogPosts.filter(p => p.category === category);
+
+        document.getElementById('featured-posts-wrapper').innerHTML = featuredPosts.map(p => this.createFeaturedPostTemplate(p)).join('');
+        document.getElementById('blog-filters').innerHTML = categories.map(cat => `<button class="filter-btn ${category === cat ? 'active' : ''}" onclick="App.renderBlogPage('${cat}')">${cat}</button>`).join('');
+        document.getElementById('blog-grid').innerHTML = filteredPosts.map(p => this.createBlogCardTemplate(p)).join('');
+
+        // Garantir que a lista apareça
+        this.navigateTo('page-blog-list');
+
+        // Evita múltiplas instâncias do Swiper
+        if (this.swiperInstance && typeof this.swiperInstance.destroy === 'function') {
+          try { this.swiperInstance.destroy(true, true); } catch (err) { /* ignore */ }
+          this.swiperInstance = null;
+        }
+        // Inicializa o Swiper depois que o HTML foi atualizado
+        setTimeout(() => {
+          this.swiperInstance = new Swiper('.featured-swiper', {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            autoplay: { delay: 4000 },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            breakpoints: { 768: { slidesPerView: 2 } }
+          });
+        }, 0);
+      },
+
+      // Renderiza detalhe do post (fecha modal antes)
+      renderPostDetailPage(postId) {
+        this.closeModal('preview-modal'); // garante que o modal não fique aberto
+        const post = this.database.blogPosts.find(p => p.id === postId);
+        if (!post) return;
+        const relatedPosts = this.database.blogPosts.filter(p => p.category === post.category && p.id !== postId).slice(0, 2);
+
+        const detailHTML = `
+          <section class="post-detail-section">
+            <div class="container">
+              <img src="${post.image}" alt="Imagem da notícia: ${escapeHtml(post.title)}" class="post-header-image" loading="lazy">
+              <div class="post-detail-grid">
+                <article>
+                  <h1 class="post-title">${post.title}</h1>
+                  <p class="post-author">Por ${post.author}</p>
+                  <div class="post-content">${post.content}</div>
+                </article>
+                <aside class="post-sidebar">
+                  <h3>Relacionadas</h3>
+                  <div class="related-posts-container">
+                    ${relatedPosts.length ? relatedPosts.map(rp => this.createRelatedPostTemplate(rp)).join('') : '<p>Nenhuma notícia relacionada.</p>'}
+                  </div>
+                  <button class="back-to-blog-btn" onclick="App.renderBlogPage()">← Voltar ao Blog</button>
+                </aside>
+              </div>
+            </div>
+          </section>
+        `;
+
+        document.getElementById('page-post-detail').innerHTML = detailHTML;
+        this.navigateTo('page-post-detail');
+      },
+
+      // Templates (com alt, loading e semântica)
+      createBlogCardTemplate(post) {
+  return `
+    <article class="blog-card" role="button" tabindex="0" onclick="App.openPreviewModal(${post.id})" onkeypress="if(event.key==='Enter') App.openPreviewModal(${post.id})">
+      <img src="${post.image}" alt="Imagem: ${escapeHtml(post.title)}" class="blog-card-image" loading="lazy">
+      <div class="blog-card-content">
+      
+        <div class="blog-card-tags">
+          <span class="blog-card-tag">${post.category}</span>
         </div>
-    </div>
+        <h3 class="blog-card-title">${post.title}</h3>
+      </div>
+    </article>
+  `;
+},
 
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        // // O objeto 'App' organiza toda a nossa lógica para evitar conflitos e manter o código limpo.
-        const App = {
-            // // Uma base de dados simulada. No projeto final, estes dados virão do Back-End (Django).
-            database: {
-                blogPosts: [
-                    { id: 1, title: '5 Sinais de que o seu Cão pode estar com Dor', author: 'Dra. Ana Sousa', image: 'https://placehold.co/600x400/60B6D3/FFFFFF?text=Cão+Saudável', category: 'Cães', featured: true, content: '<p>A dor em cães pode ser subtil. Fique atento a mudanças de comportamento como falta de apetite, relutância em se mover ou agressividade incomum. Identificar cedo é crucial para o bem-estar do seu amigo.</p><p>Se notar algum destes sinais, não hesite em procurar um veterinário. Um diagnóstico preciso pode fazer toda a diferença no tratamento e na qualidade de vida do seu pet.</p>' },
-                    { id: 2, title: 'A importância da Vacinação para Gatos', author: 'Dr. Carlos Andrade', image: 'https://placehold.co/600x400/F4D3D4/9A5C5E?text=Gato+Feliz', category: 'Gatos', featured: true, content: '<p>Manter a vacinação do seu gato em dia é um ato de amor e responsabilidade. As vacinas protegem contra doenças graves e contagiosas. Converse com seu veterinário para criar um calendário de vacinação adequado para o estilo de vida do seu felino.</p>' },
-                    { id: 3, title: 'Alimentação Natural: Prós e Contras', author: 'Dra. Ana Sousa', image: 'https://placehold.co/600x400/E58A63/FFFFFF?text=Comida+Pet', category: 'Alimentação', content: '<p>A alimentação natural tem ganhado popularidade, mas é preciso cuidado. Os prós incluem ingredientes frescos e sem conservantes. Os contras envolvem o risco de desbalanceamento nutricional. Consulte sempre um veterinário nutricionista antes de mudar a dieta do seu pet.</p>' },
-                    { id: 4, title: 'Arranhadores: Por que todo Gato Precisa de Um', author: 'Dr. Carlos Andrade', image: 'https://placehold.co/600x400/333333/FFFFFF?text=Arranhador', category: 'Gatos', featured: true, content: '<p>Arranhar é um comportamento natural dos gatos. Ajuda a afiar as unhas e a marcar território. Oferecer um arranhador adequado evita que seus móveis se tornem o alvo principal. Existem diversos modelos, descubra qual o seu gato prefere!</p>' },
-                ],
-            },
+      createFeaturedPostTemplate(post) {
+        return `
+          <div class="swiper-slide">
+            <div class="featured-slide-content" onclick="App.openPreviewModal(${post.id})" role="button" tabindex="0">
+              <img src="${post.image}" alt="Imagem destaque: ${escapeHtml(post.title)}" class="featured-slide-img" loading="lazy">
+              <div class="featured-slide-overlay"></div>
+              <div class="featured-slide-text"><h3 class="featured-slide-title">${post.title}</h3></div>
+            </div>
+          </div>
+        `;
+      },
 
-            // // Função de inicialização, chamada quando a página carrega.
-            init() {
-                this.renderBlogPage(); // Renderiza o conteúdo inicial do blog.
-            },
+      createRelatedPostTemplate(post) {
+        return `
+          <div class="related-post-card" onclick="App.renderPostDetailPage(${post.id})" role="button" tabindex="0">
+            <img src="${post.image}" alt="Imagem relacionada: ${escapeHtml(post.title)}" class="related-post-image" loading="lazy">
+            <div>F
+              <h4 class="related-post-title">${post.title}</h4>
+              <p class="related-post-author">Por ${post.author}</p>
+            </div>
+          </div>
+        `;
+      },
 
-            // // Função para navegar entre a lista de posts e o detalhe de um post.
-            navigateTo(pageId) {
-                document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-                document.getElementById(pageId).classList.add('active');
-                window.scrollTo(0, 0); // Leva o utilizador para o topo da página.
-            },
+      // Pega texto limpo de um HTML (para preview)
+      getPreviewText(html, length = 120) {
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        const text = (tmp.textContent || tmp.innerText || '').trim();
+        return text.length > length ? text.slice(0, length).trim() + '...' : text;
+      },
 
-            // // Renderiza a página principal do blog, com os filtros e os posts.
-            renderBlogPage(category = 'Todos') {
-                const categories = ['Todos', ...new Set(this.database.blogPosts.map(p => p.category))];
-                const featuredPostsHTML = this.database.blogPosts.filter(p => p.featured).map(p => this.createFeaturedPostTemplate(p)).join('');
-                const filteredPosts = category === 'Todos' ? this.database.blogPosts : this.database.blogPosts.filter(p => p.category === category);
-                const postsHTML = filteredPosts.map(p => this.createBlogCardTemplate(p)).join('');
+      // Modal helpers
+      openModal(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.add('active');
+        el.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden'; // evita scroll no fundo
+      },
 
-                // Preenche os containers com o HTML gerado
-                document.getElementById('featured-posts-wrapper').innerHTML = featuredPostsHTML;
-                document.getElementById('blog-filters').innerHTML = categories.map(cat => `<button class="filter-btn ${category === cat ? 'active' : ''}" onclick="App.renderBlogPage('${cat}')">${cat}</button>`).join('');
-                document.getElementById('blog-grid').innerHTML = postsHTML;
+      closeModal(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.classList.remove('active');
+        el.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = ''; // restaura scroll
+      },
 
-                this.navigateTo('page-blog-list');
-
-                // // Inicializa ou atualiza o carrossel de destaques.
-                new Swiper('.featured-swiper', { loop: true, slidesPerView: 1, spaceBetween: 20, autoplay: { delay: 4000 }, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 768: { slidesPerView: 2 } } });
-            },
-
-            // // Renderiza a página de detalhe de um post específico.
-            renderPostDetailPage(postId) {
-                const post = this.database.blogPosts.find(p => p.id === postId);
-                if(!post) return; // Se o post não for encontrado, não faz nada.
-                const relatedPosts = this.database.blogPosts.filter(p => p.category === post.category && p.id !== postId).slice(0, 2);
-                
-                const detailHTML = `
-                    <section class="post-detail-section">
-                        <div class="container">
-                            <img src="${post.image}" alt="${post.title}" class="post-header-image">
-                            <div class="post-detail-grid">
-                                <article>
-                                    <h1 class="post-title">${post.title}</h1>
-                                    <p class="post-author">Por ${post.author}</p>
-                                    <div class="post-content">${post.content}</div>
-                                </article>
-                                <aside class="post-sidebar">
-                                    <h3 class="font-brand text-xl font-semibold mb-4">Relacionadas</h3>
-                                    <div class="related-posts-container">
-                                        ${relatedPosts.map(rp => this.createRelatedPostTemplate(rp)).join('') || '<p>Nenhuma notícia relacionada.</p>'}
-                                    </div>
-                                    <button class="back-to-blog-btn" onclick="App.renderBlogPage()">← Voltar ao Blog</button>
-                                </aside>
-                            </div>
-                        </div>
-                    </section>
-                `;
-                document.getElementById('page-post-detail').innerHTML = detailHTML;
-                this.navigateTo('page-post-detail');
-            },
-
-            // // Funções de "template" que geram o HTML para cada componente.
-            createBlogCardTemplate: post => `<div class="blog-card" onclick="App.openPreviewModal(${post.id})"><img src="${post.image}" class="blog-card-image"><div class="blog-card-content"><p class="blog-card-category">${post.category}</p><h3 class="blog-card-title">${post.title}</h3></div></div>`,
-            createFeaturedPostTemplate: post => `<div class="swiper-slide"><div class="featured-slide-content" onclick="App.openPreviewModal(${post.id})"><img src="${post.image}" class="featured-slide-img"><div class="featured-slide-overlay"></div><div class="featured-slide-text"><h3 class="featured-slide-title">${post.title}</h3></div></div></div>`,
-            createRelatedPostTemplate: post => `<div class="related-post-card" onclick="App.renderPostDetailPage(${post.id})"><img src="${post.image}" class="related-post-image"><div><h4 class="related-post-title">${post.title}</h4><p class="related-post-author">Por ${post.author}</p></div></div>`,
-
-            // // Funções para abrir e fechar o modal de partilha.
-            openModal(modalID) { document.getElementById(modalID).classList.add('active'); },
-            closeModal(modalID) { document.getElementById(modalID).classList.remove('active'); },
-            openPreviewModal(postId) {
-                const post = this.database.blogPosts.find(p => p.id === postId);
-                if(!post) return;
-                document.getElementById('preview-modal-content').innerHTML = `
-                    <img src="${post.image}" class="modal-preview-image">
-                    <h3 class="modal-title">${post.title}</h3>
-                    <p class="modal-preview-text">${post.content.substring(3, 100)}...</p>
-                    <button class="btn btn-blue" onclick="App.renderPostDetailPage(${post.id})">Ler Notícia Completa</button>
-                `;
-                this.openModal('preview-modal');
-            },
-        };
-        // // Inicia a aplicação quando a página estiver pronta.
-        document.addEventListener('DOMContentLoaded', () => App.init());
-    </script>
+      // Abre preview e permite ir pra página de detalhe
+      openPreviewModal(postId) {
+        const post = this.database.blogPosts.find(p => p.id === postId);
+        if (!post) return;
+        const previewHTML = `
+          <img src="${post.image}" alt="Preview: ${escapeHtml(post.title)}" class="modal-preview-image" loading="lazy" style="max-width:100%; border-radius:6px;">
+          <h3 class="modal-title">${post.title}</h3>
+          <p class="modal-preview-text">${this.getPreviewText(post.content, 160)}</p>
+          <div style="display:flex; gap:8px; margin-top:12px;">
+            <button class="btn btn-blue" onclick="App.closeModal('preview-modal'); App.renderPostDetailPage(${post.id})">Ler Notícia Completa</button>
+            <button class="btn" onclick="App.closeModal('preview-modal')">Fechar</button>
+          </div>
+        `;
+        document.getElementById('preview-modal-content').innerHTML = previewHTML;
+        this.openModal('preview-modal');
+      }
+    };
+    // Pequena função para escapar texto em atributos (mais seguro)
+    function escapeHtml(str) {
+      return String(str).replace(/[&<>"'`=\/]/g, function (s) {
+        return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;', '/': '&#x2F;' })[s];
+      });
+    }
+    // Inicia App ao carregar a página
+    document.addEventListener('DOMContentLoaded', () => App.init());
+  </script>
 </body>
 </html>
