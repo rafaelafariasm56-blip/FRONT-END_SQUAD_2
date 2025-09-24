@@ -261,7 +261,7 @@ body {
   text-align: center;
   color: white;
   overflow: hidden;
-  background: url("cachorro.importante.home.jpg") center/cover no-repeat;
+  background: url("../img/cachorro.importante.home.jpg") center/cover no-repeat;
 }
 
 .coleta-box::before {
